@@ -1,0 +1,167 @@
+ /* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #2E8B57;  /* Sea Green */
+    --secondary-color: #A3C293; /* Olive Green */
+    --accent-color: #C5E1A5; /* Light Green */
+    --background-color: #F0FFF0; /* Honeydew */
+    --text-color: #2F4F4F; /* Dark Slate Gray */
+    --light-text: #6B8E23;
+    --border-radius: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+h1 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+/* Form */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: var(--primary-color);
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(46, 139, 87, 0.3);
+}
+
+form button {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Book List */
+.book-list {
+    width: 100%;
+    max-width: 800px;
+}
+
+.book-item {
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.book-details {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.book-item h2 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.book-item p {
+    margin-bottom: 5px;
+    color: var(--light-text);
+    font-size: 0.95rem;
+}
+
+/* Buttons */
+.book-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-edit {
+    background-color: var(--primary-color);
+}
+
+.btn-edit:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-delete {
+    background-color: #B22222;
+}
+
+.btn-delete:hover {
+    background-color: #8B0000;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .book-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .book-actions {
+        flex-direction: row;
+        gap: 10px;
+        margin-top: 10px;
+    }
+}

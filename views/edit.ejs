@@ -1,0 +1,9 @@
+<%- include("partials/header") %>
+
+<form action="/update/<%= book._id %>" method="POST">
+  <input type="text" name="title" value="<%= book.title %>" required>
+  <input type="text" name="author" value="<%= book.author %>" required>
+  <textarea name="notes"><%= book.notes %></textarea>
+  <input type="number" name="rating" value="<%= book.rating %>" min="1" max="5">
+  <button class="btn-primary" type="submit">Update Book</button>
+</form>

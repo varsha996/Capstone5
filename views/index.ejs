@@ -1,0 +1,31 @@
+<%- include("partials/header") %>
+
+<div class="add-book-container">
+  <form action="/add" method="POST">
+    <input type="text" name="title" placeholder="Book Title" required>
+    <input type="text" name="author" placeholder="Author" required>
+    <textarea name="notes" placeholder="Notes"></textarea>
+    <input type="number" name="rating" placeholder="Rating (1-5)" min="1" max="5">
+    <button class="btn-primary" type="submit">Add Book</button>
+  </form>
+</div>
+
+<div class="book-list">
+  <% books.forEach(book => { %>
+    <div class="book-item">
+      <div>
+        <h2><%= book.title %></h2>
+        <p><strong>Author:</strong> <%= book.author %></p>
+        <p><strong>Notes:</strong> <%= book.notes %></p>
+        <p><strong>Rating:</strong> <%= book.rating %></p>
+        <p><%= new Date(book.date).toDateString() %></p>
+      </div>
+      <div class="book-actions">
+        <form action="/delete/<%= book._id %>" method="POST">
+          <button class="btn-danger">Delete</button>
+        </form>
+        <a class="btn-edit" href="/edit/<%= book._id %>">Edit</a>
+      </div>
+    </div>
+  <% }) %>
+</div>
